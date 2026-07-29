@@ -12,8 +12,7 @@ banks_table = 'CREATE TABLE IF NOT EXISTS ' \
 sql.execute(banks_table);
 connection.commit();
 
-# ("", ""), \
-
+# Inserting banking information to the table
 bank_info = '''INSERT INTO banks VALUES \
     ("Bank of America", "800-432-1000"), \
     ("JPMorgan Chase", "800-935-9935"), \
