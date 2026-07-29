@@ -1,0 +1,16 @@
+body, h1, h2, p, button {
+    font-family: Helvetica, sans-serif;
+}
+
+.container {
+    text-align: left;
+}
+
+h2 {
+    text-align: left;
+    padding: 32px 20px;
+}
+
+p {
+    text-align: left;
+}
