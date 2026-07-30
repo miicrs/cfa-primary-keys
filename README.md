@@ -1,11 +1,12 @@
 # cfa-finalproject-team2
 Computing For All Summer 2026 Level 4 & 5 final project
 
+Templates/elements created by (and courtesy of) <a href="https://getbootstrap.com/">Bootstrap</a>
 
 Images used:
 
 Logo:
-Dollar Coin Icon - Image by Hsaart from Pixabay
+Cents Icon - Image created by Carmen Mei
 
 Others:
 Credit Card - Photo by CardMapr.nl on Unsplash

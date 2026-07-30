@@ -1,4 +1,4 @@
-body, h1, h2, p, button {
+body, h1, h2, p, button, ul, li, h4 {
     font-family: Helvetica, sans-serif;
 }
 
@@ -14,3 +14,25 @@ h2 {
 p {
     text-align: left;
 }
+
+input:valid, input:focus:valid, 
+textarea:valid, textarea:focus:valid {
+    color:green;
+    border-color:green;
+}
+
+
+input:invalid, input:focus:invalid, 
+textarea:invalid, textarea:focus:invalid {
+    color:red;
+    border-color:red;
+}
+
+/* #label-info {
+   place-items: left !important; 
+} */
+
+/* div {
+    place-items: center;
+} */
+
