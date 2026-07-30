@@ -3,6 +3,7 @@ const form = document.querySelector('form');
 const firstNameInput = document.querySelector('#firstname-input');
 const lastNameInput = document.querySelector('#lastname-input');
 const emailInput = document.querySelector('#email-input');
+const phoneInput = document.querySelector('#phone-input');
 const createPassInput = document.querySelector('#createpass-input');
 const confirmPassInput = document.querySelector('#confirmpass-input');
 const warning = document.querySelector('#warning');
@@ -13,6 +14,7 @@ form.addEventListener('submit', function (event) {
     let firstName = firstNameInput.value;
     let lastName = lastNameInput.value;
     let email = emailInput.value;
+    let phone = phoneInput.value;
     let createPass = createPassInput.value;
     let confirmPass = confirmPassInput.value;
 
