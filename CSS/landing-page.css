@@ -46,8 +46,6 @@
     height: 60px;
 }
 
-
-
 /* Hovering over button */
 .login-btn:hover, .google-login-btn:hover, .outlook-login-btn:hover, .signup-btn:hover {
     color: black;
