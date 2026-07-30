@@ -26,9 +26,15 @@ form.addEventListener('submit', function (event) {
         return;
     } 
 
-    // Password length
+    // Password length min
     if (createpass.length < 8) {
         warning.textContent = "Password is too short, must be at least 8 characters.";
+        return;
+    }
+
+    // Password length max
+    if (createpass.length > 20) {
+        warning.textContent = "Password is too long, must be under 20 characters.";
         return;
     }
 });
