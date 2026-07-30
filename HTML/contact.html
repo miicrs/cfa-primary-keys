@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/CSS/align.css">
+    <link rel="stylesheet" href="/CSS/style.css">
+    <link rel="icon" type="image/x-icon" href="/Images/cents.jpg">
+    <title>Making Cents - Your One-Stop Shop for Financial Literacy</title>
+    
+
+    <!--- Bootstrap -->
+    <html data-bs-theme="auto"></html>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+
+    <!--- Navigation Bar --->
+    <div class="container">
+         <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+             <a href="/HTML/index.html" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+                 <img src="/Images/cents.jpg" class="bi me-2" width="40" height="40">
+                 <svg class="bi me-2" width="40" height="32" aria-hidden="true">
+                    <use xlink:href="#bootstrap"></use>
+                 </svg> 
+                 <span class="fs-4 d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">Making Cents</span>
+             </a>
+             
+             
+             <ul class="nav nav-pills">
+                 <li class="nav-item">
+                    <a href="/HTML/index.html" class="nav-link" aria-current="page">Home</a>
+                 </li>
+
+                 <li class="nav-item">
+                    <a href="/HTML/resources.html" class="nav-link">Resources</a>
+                 </li> 
+
+                 <li class="nav-item">
+                    <a href="#" class="nav-link">Profile</a>
+                 </li>
+
+                 <li class="nav-item">
+                    <a href="/HTML/contact.html" class="nav-link active">Contact Us</a>
+                 </li> 
+         </header>
+    </div>
+
+    <!--- Welcome Message -->
+    <div class="px-4 py-5 my-5 text-center">
+         <img class="d-block mx-auto mb-4" src="/Images/cents.jpg" alt="" width="72" height="72">
+          <h1 class="display-5 fw-bold text-body-emphasis">Contact Us!</h1>
+           <div class="col-lg-6 mx-auto">
+                <p class="lead mb-4" style="text-align: center;"> 
+                    If you have any further questions, we're here to help!
+                    Our Financial Advisors are here to assist you in many ways possible. 
+                    Get in touch with us today!
+                </p>
+           </div>
+    </div>
+
+    <!--- Contact Information --->
+    <div class="row row-cols-1 row-cols-sm-2 g-4 m-5" id="help">
+
+        <!--- Email information --->
+         <div class="col d-flex flex-column gap-2 p-5">
+             <h4 class="fw-semibold mb-0 text-body-emphasis" id="email">Email</h4>
+             <ul class="nav flex-column">
+                <li class="nav-item mb-2">
+                    financial-advisors@makingcents.com
+                </li>
+             </ul>
+         </div>
+
+         <!--- Phone number --->
+         <div class="col d-flex flex-column gap-2 p-5">
+              <h4 class="fw-semibold mb-0 text-body-emphasis" id="phone">Phone Number</h4>
+               <ul class="nav flex-column">
+                    <li class="nav-item mb-2">
+                        1 (800) GO-MONEY
+                    </li> 
+                    <li class="nav-item mb-2">
+                        1 (800) 777-7777
+                    </li> 
+              </ul>
+         </div>
+
+         <!--- Address --->
+         <div class="col d-flex flex-column gap-2 p-5">
+              <h4 class="fw-semibold mb-0 text-body-emphasis" id="address">Address</h4>
+              <ul class="nav flex-column">
+                    <li class="nav-item mb-2">
+                        1234 Financial Ave Way
+                    </li> 
+                    <li class="nav-item mb-2">
+                        Seattle, WA 98108
+                    </li> 
+              </ul>
+         </div> 
+
+         <!--- Hours of operation --->
+         <div class="col d-flex flex-column gap-2 p-5">
+            <h4 class="fw-semibold mb-0 text-body-emphasis" id="hours">Hours of Operations</h4>
+            <ul class="nav flex-column">
+                    <li class="nav-item mb-2">
+                        Mon - Fri: 6 AM - 7 PM
+                    </li> 
+                    <li class="nav-item mb-2">
+                        Sat: 9 AM - 2 PM
+                    </li>
+                    <li class="nav-item mb-2">
+                        Sundays and Public Holidays: CLOSED
+                    </li>
+            </ul>
+         </div>
+    </div>
+
+    <div class="col-lg-6 mx-auto">
+        <p class="lead mb-4" style="text-align: center;"> 
+            Or, input your message below, and our financial advisors are here to help you!
+        </p>
+    </div>
+
+    <!--- Forms --->
+
+    <section class="container-sm p-4">
+        <h3 style="text-align: center;" class="p-5"> Questions or comments </h3>
+
+       
+        <form id="comment-form">
+            <!--- Full name --->
+            <div class="mb-3">
+                <label for="name" class="form-label text-start"> Full name </label>
+                <input type="text" class="form-control container-sm" id="name" placeholder="First name Last name" minlength="10" required>
+            </div>
+        
+            <!--- Email address --->
+            <div class="mb-3">
+                <label for="email-address" class="form-label text-start"> Email address </label>
+                <input type="email" class="form-control container-sm" id="email-address" placeholder="FirstLast@outlook.com" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="phone-number" class="form-label text-start"> Phone number </label>
+                <input type="text" class="form-control container-sm" id="phone-number" placeholder="123-456-7890" required>
+            </div>
+
+            <!--- Questions or comments --->
+            <div class="mb-3">
+                <label for="comments" class="form-label text-start"> Questions or comments </label>
+                <textarea type="text" class="form-control container-sm input" id="comments" placeholder="Your questions or comments here; please limit your comments to 500 words!" 
+                 maxlength="500"
+                 required></textarea>
+            <p id="warning"></p>
+            </div>
+            <input type="submit" value='Submit'>
+        </form>
+
+        <!--- Form Success --->
+        <!-- <div id="form-success">
+            <h2>
+                Thank you for submitting our form! <br>
+                Our Financial Advisors will be ready to reach out
+                to you as soon as possible.
+            </h2>
+        </div> -->
+
+    </section>
+
+    
+
+    <!--- The Footers that displays copyright information as well as some external links --->
+    <div class="container"> 
+        <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top">
+             <div class="col mb-3">
+                 <img src="/Images/cents.jpg" class="bi me-2" width="40" height="40" alt="Making Cents Logo">
+                 <p class="text-body-secondary">© Making Cents</p>
+             </div>
+             
+            <!--- Links --->
+            <div class="col mb-3">
+                <h5>Section</h5>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2">
+                        <a href="/HTML/index.html" class="nav-link p-0 text-body-secondary">Home</a>
+                    </li> 
+                    
+                    <li class="nav-item mb-2">
+                        <a href="#" class="nav-link p-0 text-body-secondary">Profile</a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a href="/HTML/resources.html" class="nav-link p-0 text-body-secondary">Resources</a>
+                    </li> 
+                    <li class="nav-item mb-2">
+                        <a href="/HTML/contact.html" class="nav-link p-0 text-body-secondary">Contact Us</a>
+                    </li> 
+                    <li class="nav-item mb-2">
+                        <a href="#" class="nav-link p-0 text-body-secondary">About</a>
+                    </li> 
+                </ul> 
+            </div>
+        </footer>
+    </div>
+
+    <!--- Script to Bootstrap --->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="/JavaScript/contact.js"></script>
+</body>
+
+
+</html>
