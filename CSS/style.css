@@ -1,4 +1,4 @@
-body, h1, h2, p, button, ul, li, h4 {
+body, h1, h2, h3, p, button, ul, li, h4 {
     font-family: Helvetica, sans-serif;
 }
 
@@ -36,3 +36,6 @@ textarea:invalid, textarea:focus:invalid {
     place-items: center;
 } */
 
+#thank-you {
+    display: none;
+}

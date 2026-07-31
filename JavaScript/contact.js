@@ -1,6 +1,11 @@
+// For educational purposes only,
+// these are the examples that are very bad and not clean!
 const swears = ["gross", "jerk", "stupid", "dumb", "sucks", "hate"];
-const badNames = ["poopypants", "bobbyheads", "bloomers"];
+const badNames = ["Poopypants", "Bobbyheads", "Bloomers"];
 
+
+// Returns a bad word which is detected
+// Otherwise, return false
 function dirtyWords(words) {
     let badWords = swears.some((word) => words.includes(word));
     if(badWords) {
@@ -10,8 +15,11 @@ function dirtyWords(words) {
     }
 }
 
+// Return a bad name as true if found
+// Otherwise, return false
 function dirtyNames(names) {
-    let badName = badNames.some((name) => names.include(name));
+    let badName = badNames.some((name) => names.includes(name));
+    return badName;
 }
 
 // IDs needed:
@@ -19,7 +27,17 @@ function dirtyNames(names) {
 // - email-address
 // - comments
 
-comment.addEventListener('focus', function () {
+let userComment = document.getElementById("comments");
+console.log(userComment);
+userComment.addEventListener('focus', function () {
+    this.classList.remove('is-danger');
+    warning.classList.remove('is-danger');
+    warning.innerHTML = '';
+});
+
+let userName = document.getElementById("name");
+console.log(userName);
+userName.addEventListener('focus', function() {
     this.classList.remove('is-danger');
     warning.classList.remove('is-danger');
     warning.innerHTML = '';
@@ -45,7 +63,7 @@ function submitComment(event) {
         return;
     } else {
         this.style.display = "none";
-        document.getElementById("form-success").style.display = "block";
+        document.getElementById("thank-you").style.display = "block";
     }
 }
 
