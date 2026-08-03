@@ -27,6 +27,8 @@ function dirtyNames(names) {
 // - email-address
 // - comments
 
+// Removes a bad word or name as long as the comments have been changed
+// by a user
 let userComment = document.getElementById("comments");
 console.log(userComment);
 userComment.addEventListener('focus', function () {
@@ -35,6 +37,9 @@ userComment.addEventListener('focus', function () {
     warning.innerHTML = '';
 });
 
+
+// Remvoes a bad name as well as the name itself has been changed
+// by a user
 let userName = document.getElementById("name");
 console.log(userName);
 userName.addEventListener('focus', function() {
@@ -43,6 +48,10 @@ userName.addEventListener('focus', function() {
     warning.innerHTML = '';
 });
 
+
+// Detects if a bad word/name is found and gives a user a warning.
+// If no bad words/names are found, then the process proceeds to the
+// "thank you" message
 function submitComment(event) {
     event.preventDefault();
     let name = document.getElementById("name").value;
