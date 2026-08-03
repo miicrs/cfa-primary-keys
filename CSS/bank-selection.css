@@ -102,3 +102,41 @@
     font-size: 20px;
     margin: auto;
 }
+
+.bank-card:hover, .other-card:hover {
+    border-color: grey;
+    background: lightgrey;
+}
+
+.bank-card.selected, .other-card.selected {
+    border-color: grey;
+    background: lightgrey;
+}
+
+/* Sign up button */
+.button {
+    display: flex;
+    justify-content: center;
+    margin: 20px auto 100px;
+    font-family: Helvetica, sans-serif;
+    gap: 15px;
+}
+
+.next-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    border: 1px solid lightgrey;
+    font-size: 15px;
+    color: black;
+    width: 400px;
+    height: 60px;
+    text-decoration: none;
+}
+
+.next-btn:hover {
+    color: black;
+    border-color: grey;
+    background: lightgrey;
+}
