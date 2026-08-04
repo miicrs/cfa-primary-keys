@@ -22,7 +22,7 @@ body {
     background-color: #cae0d4;
 }
 
-/* Where do you bank question */
+/* Financial goals question */
 .logo-question {
     text-align: center;
     font-family: Helvetica, sans-serif;
@@ -61,17 +61,17 @@ body {
     font-size: 17px;
 }
 
-/* Bank grid */
-.bank-grid {
+/* Goals selection */
+.goals-selection {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 15px;
+    gap: 18px;
     max-width: 1000px;
     margin: 50px auto;
     padding: 50px;
 }
 
-.bank-card {
+.goals-card {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -81,41 +81,22 @@ body {
     border-radius: 10px;
     font-family: Helvetica, sans-serif;
     background-color: white;
+    height: 75px;
 }
 
-.bank-name {
-    margin: 20px 0 auto;
-    font-family: Helvetica, sans-serif;
-    text-align: center;
-    font-size: 20px;
-}
-
-.other-card {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 20px;
-    border: 1px solid lightgrey;
-    border-radius: 10px;
-    font-family: Helvetica, sans-serif;
-    height: 175px;
-    background-color: white;
-}
-
-.other-name {
-    font-family: Helvetica, sans-serif;
-    text-align: center;
-    font-size: 20px;
+.goal-type {
     margin: auto;
+    font-family: Helvetica, sans-serif;
+    text-align: center;
+    font-size: 20px;
 }
 
-.bank-card:hover, .other-card:hover {
+.goals-card:hover {
     border-color: grey;
     background: lightgrey;
 }
 
-.bank-card.selected, .other-card.selected {
+.goals-card.selected {
     border-color: grey;
     background: lightgrey;
 }
