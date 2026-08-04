@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Budget Calculator</title>
+  <link rel="stylesheet" href="../CSS/calc.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <div id="nav-placeholder"></div>
+
+ <main class="calculator-wrapper">
+  <h1>Budget Calculator</h1>
+  <p>Find out where your money is going each month.</p>
+
+  <section class="input-panel">
+    <h2>1. Your Income</h2>
+    <div class="input-group">
+      <label for="income">Total Monthly Income ($):</label>
+      <input type="number" id="income" placeholder="e.g. 3000">
+    </div>
+
+    <h2>2. Your Expenses</h2>
+    <div class="input-group">
+      <label for="group-name-input">Create a Group:</label>
+      <div class="add-row">
+        <input type="text" id="group-name-input" placeholder="e.g. Needs, Bills, Fun Money" maxlength="24">
+        <button type="button" id="add-group-btn">Add Group</button>
+      </div>
+    </div>
+
+    <div id="groups-container"></div>
+  </section>
+
+  <section class="results-panel">
+    <h2>Monthly Budget Breakdown</h2>
+    <div class="summary-stats">
+      <p>Total Expenses: $<span id="total-expenses-display">0</span></p>
+      <h3>Remaining Balance: $<span id="balance-display">0</span></h3>
+    </div>
+    
+    <div class="chart-container">
+      <canvas id="budgetChart"></canvas>
+    </div>
+  </section>
+</main>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="../JavaScript/calc.js"></script>
+
+</body>
+</html>
