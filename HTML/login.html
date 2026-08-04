@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Bao, Ezri, Carmen, Matyana">
+  <link rel="stylesheet" href="../css/login.css">
+</head>
+
+<body>
+    <!-- Making Cents Logo -->
+    <!-- Layout from Bootstrap Heroes example package -->
+     <div class="logo-container">
+        <img 
+            src="../Images/cents.png"
+            alt="Making cents logo containing black circle with cent symbol"
+            width="250"
+            height="250"
+        />
+     </div>
+
+    <!-- Greeting --> 
+    <div class="heading">
+        <h1>Welcome to Making Cents!</h1>
+        <p class="description">
+            We are glad that you are taking the first step to financial literacy. <br>
+            To get started, please input your email address and password below to login to your account:
+        </p>
+    </div>
+    
+    <!-- Filling out personal information -->
+    <div class="login-form">
+        <section>
+            <form id="card-form">
+                <label for="email-input" class="label">Email</label>
+                <input type="email" id="email-input" placeholder="email@company.com"class="input" required>
+
+                <label for="password-input" class="label">Password</label>
+                <input type="password" id="password-input" class="input" required minlength="8" maxlength="20">
+            </form>
+        </section>
+    </div>
+
+    <!-- Login button -->
+    <a href="bank-selection.html" class="log-in-btn" type="button">
+        <button class="login-btn" type="submit">
+            <span>Login</span>
+        </button>
+    </a>
+</body>

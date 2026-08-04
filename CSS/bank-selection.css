@@ -18,6 +18,10 @@
     color: black;
 }
 
+body {
+    background-color: #cae0d4;
+}
+
 /* Where do you bank question */
 .logo-question {
     text-align: center;
@@ -43,6 +47,7 @@
     font-family: Helvetica, sans-serif;
     max-width: 600px;
     width: 80%;
+    background-color: white;
 }
 
 .search-bar input {
@@ -75,6 +80,7 @@
     border: 1px solid lightgrey;
     border-radius: 10px;
     font-family: Helvetica, sans-serif;
+    background-color: white;
 }
 
 .bank-name {
@@ -94,6 +100,7 @@
     border-radius: 10px;
     font-family: Helvetica, sans-serif;
     height: 175px;
+    background-color: white;
 }
 
 .other-name {
@@ -133,6 +140,7 @@
     width: 400px;
     height: 60px;
     text-decoration: none;
+    background-color: white;
 }
 
 .next-btn:hover {

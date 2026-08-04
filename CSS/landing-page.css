@@ -22,6 +22,11 @@
     font-weight: 500;
 }
 
+body {
+    background-color: #cae0d4;
+    margin: 0;
+}
+
 /* Login */
 .button {
     display: flex;
@@ -44,6 +49,8 @@
     color: black;
     width: 100%;
     height: 60px;
+    background-color: white;
+    text-decoration: none;
 }
 
 /* Hovering over button */

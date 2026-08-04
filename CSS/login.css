@@ -15,7 +15,7 @@ body {
 .heading {
     text-align: center;
     font-family: Helvetica, sans-serif;
-    max-width: 800px;
+    max-width: 950px;
     margin: 0 auto;
     color: black;
 }
@@ -30,8 +30,8 @@ body {
     font-weight: 500;
 }
 
-/* Sign up form */
-.signup-form {
+/* Login form */
+.login-form {
     font-family: Helvetica, sans-serif;
     display: flex;
     flex-direction: column;
@@ -40,12 +40,12 @@ body {
     gap: 10px;
 }
 
-.signup-form label {
+.login-form label {
     font-size: 18px;
     margin-bottom: 0;
 }
 
-.signup-form input {
+.login-form input {
     padding: 15px;
     font-size: 15px;
 }
@@ -57,8 +57,8 @@ body {
     flex: 1;
 }
 
-/* Register button */
-.register-btn {
+/* Login button */
+.login-btn {
     display: flex;
     align-items: center;
     justify-content: space-between;
