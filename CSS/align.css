@@ -1,0 +1,7 @@
+div {
+    align-items: center;
+}
+
+#container {
+    place-items: none; 
+}
