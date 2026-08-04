@@ -1,0 +1,78 @@
+main {
+    font-family: Helvetica, sans-serif;
+    font-size: 1.25rem;
+}
+
+#users-overview-information {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+#users-public-info { 
+    background-color: #cae0d4;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#users-financial-focus { 
+    background-color: #cae0d4;
+}
+
+#users-name {
+    margin-top: 0.75rem;
+}
+
+
+#information-buttons .nav-link {
+    background-color: #D3AF37;
+    color: #000;
+}
+
+#personal-info {
+    min-height: 250px;
+    min-width: 100%;
+}
+
+#edit-personal-position {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#personal-info-fields {
+    row-gap: 3rem;
+}
+
+#edit-bank-position {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#users-bankaccounts-list h5 {
+    font-size: 1.25rem;
+}
+
+#users-bankaccounts-list small {
+    font-size: 1rem;
+}
+
+.bank-account-listed {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.bank-logo {
+    width: 90px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bank-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
