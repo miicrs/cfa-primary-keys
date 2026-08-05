@@ -1,19 +1,19 @@
 # Importing sqlite3, connecting to the created banks database, and getting a cursor
 import sqlite3
-connection = sqlite3.connect('pk_banks.db')
+connection = sqlite3.connect('pk_tables.db')
 sql = connection.cursor()
 
 # Creating banks table
 banks_table = 'CREATE TABLE IF NOT EXISTS ' \
     'banks (' \
+    '"banks_id" INTEGER PRIMARY KEY AUTOINCREMENT,' \
     '"Name" TEXT,' \
     '"Phone number" TEXT' \
     ')'
 sql.execute(banks_table);
-connection.commit();
 
 # Inserting banking information to the table
-bank_info = '''INSERT INTO banks VALUES \
+bank_info = '''INSERT INTO banks ("Name", "Phone number") VALUES \
     ("Bank of America", "800-432-1000"), \
     ("JPMorgan Chase", "800-935-9935"), \
     ("Citi Bank", "800-374-9700"), \
@@ -32,6 +32,28 @@ bank_info = '''INSERT INTO banks VALUES \
     ("Barclays", "800-309-6191") \
 '''
 sql.execute(bank_info);
+
+# Creating users table
+users_table = 'CREATE TABLE IF NOT EXISTS ' \
+    'users (' \
+    '"user_id" INTEGER PRIMARY KEY AUTOINCREMENT,' \
+    '"First name" TEXT,' \
+    '"Last name" TEXT,' \
+    '"Phone number" TEXT,' \
+    '"Email" TEXT,' \
+    '"Password" TEXT' \
+    ')'
+sql.execute(users_table);
+
+# Creating junction table
+junction_table = 'CREATE TABLE IF NOT EXISTS ' \
+    'junction (' \
+    '"user_id" INTEGER,' \
+    '"bank_id" INTEGER,' \
+    'FOREIGN KEY(user_id) REFERENCES users(user_id),' \
+    'FOREIGN KEY(bank_id) REFERENCES banks(bank_id)' \
+    ')'
+sql.execute(junction_table);
 
 connection.commit();
 

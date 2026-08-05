@@ -47,10 +47,10 @@
                 <input type="tel" id="phone-input" placeholder="000-000-0000" class="input" required>
 
                 <label for="createpass-input" class="label">Create password</label>
-                <input type="password" id="createpass-input" class="input" required minlength="8" maxlength="20">
+                <input type="password" id="createpass-input" placeholder="At least 8 characters" class="input" required minlength="8" maxlength="20">
 
                 <label for="confirmpass-input" class="label">Confirm password</label>
-                <input type="password" id="confirmpass-input" class="input" required minlength="8" maxlength="20">
+                <input type="password" id="confirmpass-input" placeholder="Confirm your password" class="input" required minlength="8" maxlength="20">
 
                 <p class="help" id="warning"></p>
 
@@ -62,5 +62,34 @@
         </section>
     </div>
 
+    <div class="status" id="signup-status"></div>
+
     <script src="../JavaScript/sign-up.js"></script>
+    <script src="../JavaScript/user-auth.js"></script>
 </body>
+
+<script>
+const API = "https://localhost:3000";
+
+async function signup() {
+const email = document.getElementById('email-input').value;
+const password = document.getElementById('createpass-input').value;
+
+    try {
+        const response = await fetch(`${API}/signup`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json'},
+            body: JSON.stringify({email, password})
+        });
+
+        if (response.status === 201) {
+            setStatus('signup-status', 'Account created successfully.', 'success');
+        } else {
+            const data = await response.json().catch(() => ({}));
+            setStatus('signup-status', data.message || 'Signup failed.', 'error');
+        }
+    } catch (error) {
+        setStatus('signup-status', 'Could not reach the server.', 'error');
+    }
+}
+</script>
