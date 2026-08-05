@@ -29,14 +29,17 @@ form.addEventListener('submit', function (event) {
     } 
 
     // Password length min
-    if (createpass.length < 8) {
+    if (createPass.length < 8) {
         warning.textContent = "Password is too short, must be at least 8 characters.";
         return;
     }
 
     // Password length max
-    if (createpass.length > 20) {
+    if (createPass.length > 20) {
         warning.textContent = "Password is too long, must be under 20 characters.";
         return;
     }
+
+    // Prevent form submission if the sign up form is not filled out all the way
+    window.location.href = 'bank-selection.html';
 });

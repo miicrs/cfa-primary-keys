@@ -32,7 +32,7 @@ body {
     display: flex;
     align-items: center;
     flex-direction: column;
-    margin: 40px auto 0;
+    margin: 40px auto 40px;
     max-width: 450px;
     font-family: Helvetica, sans-serif;
     gap: 15px;
