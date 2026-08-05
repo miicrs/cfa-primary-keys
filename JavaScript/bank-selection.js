@@ -1,4 +1,4 @@
-
+// Bank selection selecting s
 const cards = document.querySelectorAll('.bank-card, .other-card');
     cards.forEach(card => {
     card.addEventListener('click', () => {

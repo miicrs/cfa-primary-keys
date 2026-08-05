@@ -40,6 +40,18 @@ form.addEventListener('submit', function (event) {
         return;
     }
 
+    // Phone length
+    if (phone.length != 10) {
+        warning.textContent = "Please enter a valid 10 digit phone number.";
+        return;
+    }
+
+    // Email formatting
+    if (email.indexOf('@') == -1 || email.indexOf('.') == -1) {
+        warning.textContent = "Please enter a valid email address.";
+        return;
+    }
+
     // Prevent form submission if the sign up form is not filled out all the way
     window.location.href = 'bank-selection.html';
 });
