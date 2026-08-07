@@ -37,8 +37,8 @@ sql.execute(banks_table);
 users_table = 'CREATE TABLE IF NOT EXISTS ' \
     'users (' \
     '"user_id" INTEGER PRIMARY KEY AUTOINCREMENT,' \
-    '"First name" TEXT,' \
-    '"Last name" TEXT,' \
+    '"First Name" TEXT,' \
+    '"Last Name" TEXT,' \
     '"Phone number" TEXT,' \
     '"Email" TEXT,' \
     '"Password" TEXT' \

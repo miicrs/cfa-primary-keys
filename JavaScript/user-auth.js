@@ -30,7 +30,7 @@ app.post('/signup', async (req, res) => {
     const hashedPassword = await bcrypt.hash(createPass, 10);
 
     db.run(
-        'INSERT INTO users (first_name, last_name, email, phone, createPass) VALUES (?, ?, ?, ?, ?)',
+        'INSERT INTO users ("First Name", "Last Name", "Email", "Phone number", "Password") VALUES (?, ?, ?, ?, ?)',
         [firstName, lastName, email, phone, hashedPassword],
         function (err) {
             if (err) {

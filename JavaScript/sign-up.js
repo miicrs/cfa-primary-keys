@@ -54,11 +54,8 @@ form.addEventListener('submit', async function (event) {
         return;
     }
 
-    // Prevent form submission if the sign up form is not filled out all the way
-    window.location.href = 'bank-selection.html';
-
     try {
-        const response = await fetch('${API_URL}/signup', {
+        const response = await fetch(`${API_URL}/signup`, {
             method: 'POST',
             headers: {
             'Accept': 'application/json',
@@ -72,4 +69,7 @@ form.addEventListener('submit', async function (event) {
     } catch (error) {
         console.error('Error has occurred during sign-up' + error);
     }
+
+    // Prevent form submission if the sign up form is not filled out all the way
+    window.location.href = 'bank-selection.html';
 });
