@@ -1,5 +1,5 @@
 // Query selectors
-import { connectSqlite } from './connect.js';
+const API_URL = "http://localhost:3000";
 
 const form = document.querySelector('form');
 const firstNameInput = document.querySelector('#firstname-input');
@@ -11,7 +11,7 @@ const confirmPassInput = document.querySelector('#confirmpass-input');
 const warning = document.querySelector('#warning');
 
 // Form submission
-form.addEventListener('submit', function (event) {
+form.addEventListener('submit', async function (event) {
     event.preventDefault();
     let firstName = firstNameInput.value;
     let lastName = lastNameInput.value;
@@ -19,8 +19,6 @@ form.addEventListener('submit', function (event) {
     let phone = phoneInput.value;
     let createPass = createPassInput.value;
     let confirmPass = confirmPassInput.value;
-
-    const db = connectSqlite();
 
     // Warnings
     warning.textContent = "";
@@ -59,12 +57,19 @@ form.addEventListener('submit', function (event) {
     // Prevent form submission if the sign up form is not filled out all the way
     window.location.href = 'bank-selection.html';
 
-    const insertQuery = `INSERT INTO users (first_name, last_name, email, phone, password) VALUES (?, ?, ?, ?, ?)`;
-    db.run(insertQuery, [firstName, lastName, email, phone, createPass], function (err) {
-        if (err) {
-            return console.error(err.message);
-        }
-        console.log(`A row has been inserted with rowid ${this.lastID}`);
+    try {
+        const response = await fetch('${API_URL}/signup', {
+            method: 'POST',
+            headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            firstName, lastName, email, phone, createPass
+        })
     });
-    db.close();
+    console.log(response);
+    } catch (error) {
+        console.error('Error has occurred during sign-up' + error);
+    }
 });

@@ -12,26 +12,26 @@ const sqlite3 = require('sqlite3').verbose();
 
 const app = express();
 const port = process.env.PORT || 3000;
-
+const sqlitePath = process.env.DB_PATH;
 app.use(cors());
 app.use(express.json());
 app.use(express.static('public'));
 
-const db = new sqlite3.Database('auth.db');
+const db = new sqlite3.Database(sqlitePath);
 
 // ---------- Signup ----------
 app.post('/signup', async (req, res) => {
-    const { email, password } = req.body;
+    const { firstName, lastName, email, phone, createPass } = req.body;
 
-    if (!email || !password) {
-        return res.status(400).json({ message: 'Email and password are required.' });
+    if (!firstName || !lastName || !email || !phone || !createPass) {
+        return res.status(400).json({ message: 'All sign-up fields are required.' });
     }
 
-    const hashedPassword = await bcrypt.hash(password, 10);
+    const hashedPassword = await bcrypt.hash(createPass, 10);
 
     db.run(
-        'INSERT INTO users (email, password) VALUES (?, ?)',
-        [email, hashedPassword],
+        'INSERT INTO users (first_name, last_name, email, phone, createPass) VALUES (?, ?, ?, ?, ?)',
+        [firstName, lastName, email, phone, hashedPassword],
         function (err) {
             if (err) {
                 // UNIQUE constraint failure means the email is already taken
