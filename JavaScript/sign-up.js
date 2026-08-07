@@ -71,5 +71,5 @@ form.addEventListener('submit', async function (event) {
     }
 
     // Prevent form submission if the sign up form is not filled out all the way
-    window.location.href = 'bank-selection.html';
+    // window.location.href = 'bank-selection.html';
 });
