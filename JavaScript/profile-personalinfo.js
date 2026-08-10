@@ -74,7 +74,7 @@ function editMode() {
         let currVal = input.textContent;
 
         // making sure the fields are filled out
-        input.innerHTML = `<input type="text" class="edit-input form-control form-control-sm" value="${currVal}" required>`;
+        input.innerHTML = `<input type="text" class="edit-input form-control" value="${currVal}" required>`;
 
         let newInput = input.querySelector('input');
 
