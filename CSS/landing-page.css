@@ -1,0 +1,113 @@
+/* Making Cents Logo Icon */
+.logo-container {
+    text-align: center;
+}
+
+/* Greeting */
+.heading {
+    text-align: center;
+    font-family: Helvetica, sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+    color: black;
+}
+
+.heading h1 {
+    font-size: 45px;
+}
+
+.heading .description {
+    font-size: 20px;
+    line-height: 1.25;
+    font-weight: 500;
+}
+
+body {
+    background-color: #cae0d4;
+    margin: 0;
+}
+
+/* Login */
+.button {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 40px auto 40px;
+    max-width: 450px;
+    font-family: Helvetica, sans-serif;
+    gap: 15px;
+}
+
+/* Login / Sign up buttons */
+.login-btn, .google-login-btn, .outlook-login-btn, .signup-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    border: 1px solid lightgrey;
+    font-size: 15px;
+    color: black;
+    width: 100%;
+    height: 60px;
+    background-color: white;
+    text-decoration: none;
+}
+
+/* Hovering over button */
+.login-btn:hover, .google-login-btn:hover, .outlook-login-btn:hover, .signup-btn:hover {
+    color: black;
+    border-color: grey;
+    background: lightgrey;
+}
+
+/* Google & Outlook */
+.sso {
+    display: flex;
+    gap: 15px;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: nowrap;
+}
+
+.sso button {
+    flex: 1;
+    min-width: 0;
+}
+
+.sso-icons {
+    align-items: left;
+}
+
+/* Arrow icon */
+.arrow-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    color: black;
+    flex-shrink: 0;
+    border: 1px solid lightgrey;
+    height: 20px;
+    width: 20px;
+}
+
+/* Dividers */
+.divider {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: 10px 0;
+    gap: 15px;
+}
+
+.divider::before, .divider::after {
+    content: "";
+    flex: 1;
+    height: 1;
+    background: grey;
+}
+
+.divider span {
+    white-space: nowrap;
+    font-size: 15px;
+}
