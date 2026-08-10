@@ -54,6 +54,7 @@ form.addEventListener('submit', async function (event) {
         return;
     }
 
+    // Submitting user sign-up request to the API
     try {
         const response = await fetch(`${API_URL}/signup`, {
             method: 'POST',
@@ -65,6 +66,7 @@ form.addEventListener('submit', async function (event) {
             firstName, lastName, email, phone, createPass
         })
     });
+    // Logging response to the console for debugging
     console.log(response);
     } catch (error) {
         console.error('Error has occurred during sign-up' + error);

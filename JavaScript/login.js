@@ -22,12 +22,16 @@ form.addEventListener('submit', async function (event) {
         return;
     }
 
-    await login(email, pass);
-
-    // Prevent form submission if the sign up form is not filled out all the way
-    window.location.href = 'index.html';
+    const success = await login(email, pass);
+    if (success) {
+        // Prevent form submission if the sign up form is not filled out all the way
+        window.location.href = 'index.html';
+    } else {
+        warning.textContent = "Invalid email or password, please try again.";
+    }
 });
 
+// Login function
 async function login(email, password) {
     try {
         const res = await fetch(`${API_URL}/login`, {
@@ -36,6 +40,7 @@ async function login(email, password) {
             body: JSON.stringify({ email, password })
         });
 
+        // Storing auth token if login is successful
         if (res.ok) {
             const data = await res.json();
             localStorage.setItem('token', data.token);
@@ -44,14 +49,16 @@ async function login(email, password) {
             const tokenBox = document.getElementById('token-box');
             tokenBox.style.display = 'block';
             tokenBox.textContent = data.token;
+            return true;
+        // Returns an error if login is not successful
         } else {
             // setStatus('login-status', 'Invalid email or password.', 'error');
             warning.textContent = "Invalid email or password, please try again.";
-            return;
+            return false;
         }
     } catch (err) {
         // setStatus('login-status', 'Could not reach the server.', 'error');
         warning.textContent = "Could not reach the server, please try again.";
-        return;
+        return false;
     }
 }

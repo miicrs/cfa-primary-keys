@@ -46,18 +46,18 @@ app.post('/signup', async (req, res) => {
 app.post('/login', (req, res) => {
     const { email, password } = req.body;
 
-    db.get('SELECT * FROM users WHERE email = ?', [email], async (err, user) => {
+    db.get('SELECT * FROM users WHERE Email = ?', [email], async (err, user) => {
         if (err || !user) {
             return res.sendStatus(401);
         }
 
-        const isMatch = await bcrypt.compare(password, user.password);
+        const isMatch = await bcrypt.compare(password, user.Password);
         if (!isMatch) {
             return res.sendStatus(401);
         }
 
         const token = jwt.sign(
-            { userId: user.id, email: user.email },
+            { userId: user.user_id, email: user.Email },
             process.env.JWT_SECRET,
             { expiresIn: '1h' }
         );
