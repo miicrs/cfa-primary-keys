@@ -74,7 +74,7 @@ function updateChart(names, totals, remainingSlice) {
     budgetChart.data.labels = labels;
     budgetChart.data.datasets[0].data = data;
 
-    // Picks each slice's color cycling through a color list, gray for the leftover Remaining slice
+    // Picks each slice's color cycling through a color list,gray for the leftover Remaining slice
     const sliceColors = [];
     for (let i = 0; i < data.length; i++) {
       const isRemainingSlice = remainingSlice > 0 && i === data.length - 1;
@@ -82,5 +82,5 @@ function updateChart(names, totals, remainingSlice) {
     }
     budgetChart.data.datasets[0].backgroundColor = sliceColors;
   }
-  budgetChart.update(); // redraws using the data we just set above
+  budgetChart.update(); // redraws using the data set above
 }
