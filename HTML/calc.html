@@ -3,53 +3,168 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Budget Calculator</title>
+  <title>Budget Builder</title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+
+  <!-- Site-wide styles (fonts, form colors, etc.) -->
+  <link rel="stylesheet" href="../CSS/style.css">
+
+  <!-- styling bootstrap stuff -->
   <link rel="stylesheet" href="../CSS/calc.css">
+
+  <link rel="icon" type="image/x-icon" href="../Images/cents.jpg">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
-<body>
+<body class="d-flex flex-column min-vh-100">
 
-  <div id="nav-placeholder"></div>
+  <!--- Navbar --->
+  <div class="container">
+    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+      <a href="index.html" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+        <img src="../Images/cents.jpg" class="bi me-2" width="40" height="40">
+        <svg class="bi me-2" width="40" height="32" aria-hidden="true">
+          <use xlink:href="#bootstrap"></use>
+        </svg>
+        <span class="fs-4 d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">Making Cents</span>
+      </a>
 
- <main class="calculator-wrapper">
-  <h1>Budget Calculator</h1>
-  <p>Find out where your money is going each month.</p>
+      <ul class="nav nav-pills">
+        <li class="nav-item">
+          <a href="index.html" class="nav-link" aria-current="page">Home</a>
+        </li>
+        <li class="nav-item">
+          <a href="calc.html" class="nav-link active">Budget Builder</a>
+        </li>
+        <li class="nav-item">
+          <a href="resources.html" class="nav-link">Resources</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">Profile</a>
+        </li>
+        <li class="nav-item">
+          <a href="contact.html" class="nav-link">Contact Us</a>
+        </li>
+      </ul>
+    </header>
+  </div>
 
-  <section class="input-panel">
-    <h2>1. Your Income</h2>
-    <div class="input-group">
-      <label for="income">Total Monthly Income ($):</label>
-      <input type="number" id="income" placeholder="e.g. 3000">
-    </div>
+  <!-- flex grow 1 makes this stretch to fill leftover space pushing the footer to the bottom on short pages -->
+  <main class="container flex-grow-1 mb-5">
 
-    <h2>2. Your Expenses</h2>
-    <div class="input-group">
-      <label for="group-name-input">Create a Group:</label>
-      <div class="add-row">
-        <input type="text" id="group-name-input" placeholder="e.g. Needs, Bills, Fun Money" maxlength="24">
-        <button type="button" id="add-group-btn">Add Group</button>
+    <!--- How to explainer top header --->
+    <div class="card shadow-sm mt-2 mb-4">
+      <div class="card-body p-4">
+        <h2 class="h5 calc-heading how-to-heading mb-2">How This Budget Builder Works</h2>
+        <p class="text-muted mb-4">Add your monthly income, then build your own custom expense groups and organize your budget however makes sense for you</p>
+
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          <div class="col">
+            <div class="d-flex align-items-center justify-content-center bg-dark text-white rounded mb-2" style="width:34px;height:34px;font-weight:700;">$</div>
+            <h3 class="h6 mb-1">1. Add Your Income</h3>
+            <p class="small text-muted mb-0">Enter your total monthly income to set your starting point</p>
+          </div>
+          <div class="col">
+            <div class="d-flex align-items-center justify-content-center bg-dark text-white rounded mb-2" style="width:34px;height:34px;font-weight:700;">+</div>
+            <h3 class="h6 mb-1">2. Create Your Groups</h3>
+            <p class="small text-muted mb-0">Name your own categories to whatever fits best with your life. Then add expenses inside each one</p>
+          </div>
+          <div class="col">
+            <div class="d-flex align-items-center justify-content-center bg-dark text-white rounded mb-2" style="width:34px;height:34px;font-weight:700;">%</div>
+            <h3 class="h6 mb-1">3. Track Your Balance</h3>
+            <p class="small text-muted mb-0">Watch your remaining balance and the donut chart update live as you add expenses.</p>
+          </div>
+        </div>
       </div>
     </div>
 
-    <div id="groups-container"></div>
-  </section>
+    <h1 class="mb-4">Budget Builder</h1>
 
-  <section class="results-panel">
-    <h2>Monthly Budget Breakdown</h2>
-    <div class="summary-stats">
-      <p>Total Expenses: $<span id="total-expenses-display">0</span></p>
-      <h3>Remaining Balance: $<span id="balance-display">0</span></h3>
+    <div class="row g-3">
+
+      <!-- Left column stuff -->
+      <div class="col-lg-5">
+        <div class="card shadow-sm h-100">
+          <div class="card-body p-4">
+            <h2 class="h5 calc-heading">1. Your Income</h2>
+            <div class="mb-4">
+              <label for="income" class="form-label text-uppercase small text-muted">Total Monthly Income ($):</label>
+              <input type="number" id="income" class="form-control" placeholder="e.g. 3000">
+            </div>
+
+            <h2 class="h5 calc-heading">2. Your Expenses</h2>
+            <div class="mb-3">
+              <label for="group-name-input" class="form-label text-uppercase small text-muted">Create a Group:</label>
+              <div class="input-group">
+                <input type="text" id="group-name-input" class="form-control" placeholder="e.g. Needs, Bills, Fun Money" maxlength="24">
+                <button type="button" id="add-group-btn" class="btn btn-dark">Add Group</button>
+              </div>
+            </div>
+
+            <div id="groups-container" class="row row-cols-1 row-cols-sm-2 g-3"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right column: totals and pie chart -->
+      <div class="col-lg-7">
+        <div class="card shadow-sm h-100">
+          <div class="card-body p-4">
+            <h2 class="h5 calc-heading mb-4">Monthly Budget Breakdown</h2>
+
+            <div class="d-flex justify-content-between align-items-end flex-wrap border-bottom pb-3 mb-4">
+              <p class="text-muted mb-0">Total Expenses: $<span id="total-expenses-display" class="fw-bold text-dark">0</span></p>
+              <h3 id="balance-heading" class="mb-0 balance-positive">Remaining Balance: $<span id="balance-display">0</span></h3>
+            </div>
+
+            <div class="chart-holder">
+              <canvas id="budgetChart"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
-    
-    <div class="chart-container">
-      <canvas id="budgetChart"></canvas>
-    </div>
-  </section>
-</main>
+  </main>
 
-  <div id="footer-placeholder"></div>
+  <!--- footer  --->
+  <div class="container mt-auto">
+    <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top">
+      <div class="col mb-3">
+        <img src="../Images/cents.jpg" class="bi me-2" width="40" height="40" alt="Making Cents Logo">
+        <p class="text-body-secondary"> Making Cents</p>
+      </div>
 
+      <div class="col mb-3">
+        <h5>Section</h5>
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2">
+            <a href="index.html" class="nav-link p-0 text-body-secondary">Home</a>
+          </li>
+          <li class="nav-item mb-2">
+            <a href="calc.html" class="nav-link p-0 text-body-secondary">Budget Builder</a>
+          </li>
+          <li class="nav-item mb-2">
+            <a href="#" class="nav-link p-0 text-body-secondary">Profile</a>
+          </li>
+          <li class="nav-item mb-2">
+            <a href="resources.html" class="nav-link p-0 text-body-secondary">Resources</a>
+          </li>
+          <li class="nav-item mb-2">
+            <a href="contact.html" class="nav-link p-0 text-body-secondary">Contact Us</a>
+          </li>
+          <li class="nav-item mb-2">
+            <a href="#" class="nav-link p-0 text-body-secondary">About</a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+  </div>
+
+  <!--- js scripts --->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  <script src="../JavaScript/chart.js"></script>
   <script src="../JavaScript/calc.js"></script>
-
 </body>
 </html>
