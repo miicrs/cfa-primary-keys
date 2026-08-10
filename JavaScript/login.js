@@ -1,9 +1,9 @@
 // Query selectors
 const API_URL = "http://localhost:3000";
 
-const form = document.querySelector('form');
+const form = document.querySelector('#form');
 const emailInput = document.querySelector('#email-input');
-const passInput = document.querySelector('#pass-input');
+const passInput = document.querySelector('#password-input');
 const warning = document.querySelector('#warning');
 
 // Form submission
@@ -22,14 +22,13 @@ form.addEventListener('submit', async function (event) {
         return;
     }
 
+    await login(email, pass);
+
     // Prevent form submission if the sign up form is not filled out all the way
-    // window.location.href = 'bank-selection.html';
+    window.location.href = 'index.html';
 });
 
-async function login() {
-const email = document.getElementById('login-email').value;
-const password = document.getElementById('login-password').value;
-
+async function login(email, password) {
     try {
         const res = await fetch(`${API}/login`, {
             method: 'POST',
@@ -40,15 +39,19 @@ const password = document.getElementById('login-password').value;
         if (res.ok) {
             const data = await res.json();
             localStorage.setItem('token', data.token);
-            setStatus('login-status', 'Logged in.', 'success');
+            // setStatus('login-status', 'Logged in.', 'success');
 
             const tokenBox = document.getElementById('token-box');
             tokenBox.style.display = 'block';
             tokenBox.textContent = data.token;
         } else {
-            setStatus('login-status', 'Invalid email or password.', 'error');
+            // setStatus('login-status', 'Invalid email or password.', 'error');
+            warning.textContent = "Invalid email or password, please try again.";
+            return;
         }
     } catch (err) {
-        setStatus('login-status', 'Could not reach the server.', 'error');
+        // setStatus('login-status', 'Could not reach the server.', 'error');
+        warning.textContent = "Could not reach the server, please try again.";
+        return;
     }
 }
