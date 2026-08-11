@@ -1,0 +1,150 @@
+/* Making Cents Logo */
+.logo {
+    text-align: center;
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Helvetica, sans-serif;
+    gap: 30px;
+}
+
+.logo-icon img {
+    display: block;
+}
+
+.logo-text h1 {
+    margin: 0;
+    color: black;
+}
+
+body {
+    background-color: #cae0d4;
+}
+
+/* Where do you bank question */
+.logo-question {
+    text-align: center;
+    font-family: Helvetica, sans-serif;
+    margin: 60px 0 auto;
+}
+
+.logo-question h2 {
+    font-weight: normal;
+    margin: 0;
+    text-decoration: underline;
+    font-size: 30px;
+}
+
+/* Search bar */
+.search-bar {
+    display: flex;
+    align-items: center;
+    margin: 50px auto 0;
+    padding: 12px 20px;
+    border: 1px solid lightgrey;
+    border-radius: 30px;
+    font-family: Helvetica, sans-serif;
+    max-width: 600px;
+    width: 80%;
+    background-color: white;
+}
+
+.search-bar input {
+    flex-shrink: 0;
+}
+
+.search-input {
+    flex: 1;
+    border: none; 
+    outline: none;
+    font-size: 17px;
+}
+
+/* Bank grid */
+.bank-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 50px;
+}
+
+.bank-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+    font-family: Helvetica, sans-serif;
+    background-color: white;
+}
+
+.bank-name {
+    margin: 20px 0 auto;
+    font-family: Helvetica, sans-serif;
+    text-align: center;
+    font-size: 20px;
+}
+
+.other-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+    font-family: Helvetica, sans-serif;
+    height: 175px;
+    background-color: white;
+}
+
+.other-name {
+    font-family: Helvetica, sans-serif;
+    text-align: center;
+    font-size: 20px;
+    margin: auto;
+}
+
+.bank-card:hover, .other-card:hover {
+    border-color: grey;
+    background: lightgrey;
+}
+
+.bank-card.selected, .other-card.selected {
+    border-color: grey;
+    background: lightgrey;
+}
+
+/* Next button */
+.button {
+    display: flex;
+    justify-content: center;
+    margin: 20px auto 100px;
+    font-family: Helvetica, sans-serif;
+    gap: 15px;
+}
+
+.next-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    border: 1px solid lightgrey;
+    font-size: 15px;
+    color: black;
+    width: 400px;
+    height: 60px;
+    text-decoration: none;
+    background-color: white;
+}
+
+.next-btn:hover {
+    color: black;
+    border-color: grey;
+    background: lightgrey;
+}
