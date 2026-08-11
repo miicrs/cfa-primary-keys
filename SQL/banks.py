@@ -57,9 +57,4 @@ sql.execute(junction_table);
 
 connection.commit()
 
-sql.execute('SELECT * FROM users')
-view = sql.fetchall()
-for row in view:
-    print(row)
-
 connection.close()

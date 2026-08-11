@@ -66,12 +66,15 @@ form.addEventListener('submit', async function (event) {
             firstName, lastName, email, phone, createPass
         })
     });
-    // Logging response to the console for debugging
-    console.log(response);
+
+        if (response.ok) {
+            // Prevent form submission if the sign up form is not filled out all the way
+            window.location.href = 'bank-selection.html';
+        } else {
+            warning.textContent = "Form is invalid, please try again.";
+        } 
     } catch (error) {
         console.error('Error has occurred during sign-up' + error);
+        warning.textContent = "Error has occurred during sign-up, please try again.";
     }
-
-    // Prevent form submission if the sign up form is not filled out all the way
-    window.location.href = 'bank-selection.html';
 });
