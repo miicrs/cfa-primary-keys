@@ -81,8 +81,8 @@ junction_table = 'CREATE TABLE IF NOT EXISTS ' \
     'FOREIGN KEY(bank_id) REFERENCES banks(bank_id)' \
     'FOREIGN KEY(goals_id) REFERENCES goals(goals_id)' \
     ')'
-sql.execute(junction_table);
-
+sql.execute(junction_table)
+sql.execute('SELECT * from users')
 connection.commit()
 
 connection.close()
