@@ -1,0 +1,27 @@
+body{
+  background:#FAFAF8;
+  font-family: Helvetica, sans-serif;
+}
+
+.calc-heading{
+  padding:0;
+}
+
+/* Remaining Balance text color */
+.balance-positive{
+  color:#0e71e1; /* This is the text color when you're within your budget */
+}
+.balance-negative{
+  color:#C0392B; /* when u go over budget it'll turn red  */
+}
+
+/* How This Calculator Works heading color */
+.how-to-heading{
+  color:#0e71e1; 
+}
+
+/* pie chart */
+.chart-holder{
+  max-width:280px;
+  margin:0 auto;
+}

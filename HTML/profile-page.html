@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="auto">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Profile - Making Cents</title>
+
+    <!-- Bootstrap -->
+    <html data-bs-theme="auto"></html>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+     <link rel="stylesheet" href="/cfa-primary-keys/CSS/profile-page.css">
+
+</head>
+
+<body>
+    <!-- placeholder comment for nav bar -->
+
+    <main class="container my-5 pt-2">
+
+        <div class="row mb-5 align-items-center" id="users-summary">
+
+            <!-- User's Profile Image -->
+            <div class="col-md-3 mb-3 mb-0 text-center">
+                <div class="card border-0" id="users-image">
+                    <img src="/cfa-primary-keys/Images/default-profile-image.jpg" class="card-img-top rounded-circle mx-auto" alt="Profile picture" style="width: 180px; height: 180px; object-fit: cover;">
+                    <!-- User's Name -->
+                    <h3 class="card-title mb-0" id="users-name">FirstName LastName</h3>
+                </div>
+            </div>
+
+            <!-- User's email with the month and year they started to learn -->
+            <!-- publicly show other users -->
+            <div class="col-md-8" id="users-overview-information">
+                <div class="card bg-opacity-25 border-0 shadow">
+                    <div class="card-body" id="users-public-info">
+                        <span class="fw-semibold">user@email.com</span>
+                        <span class="text-dark">Member since July 2xxx</span>
+                    </div>
+                </div>
+ 
+                <div class="card bg-opacity-25 border-0 shadow" id="users-financial-focus">
+                    <div class="card-body">
+                        <strong>My Financial Focus:</strong>
+                        <span class="text-dark">[user's financial focus all on here]</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-4" id="users-information-tabs">
+            <!-- Toggle between choosing Personal Information or Affiliated Bank Information Buttons -->
+            <ul class="nav nav-pills mb-3" id="information-buttons" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active fw-bold me-2" id="personal-tab" data-bs-toggle="pill" data-bs-target="#personal-info" type="button" role="tab" aria-current="page">
+                        Personal Information
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link fw-bold" id="banks-tab" data-bs-toggle="pill" data-bs-target="#bank-info" type="button" role="tab" aria-current="page">
+                        Affiliated Bank Information
+                    </button>
+                </li>
+            </ul>
+
+            <!-- User can edit their information here -->
+            <div class="tab-content p-5 rounded bg-success bg-opacity-25 shadow" id="userInformation">
+
+                <!-- Person Information Here -->
+                <div class="tab-pane fade show active" id="personal-info" role="tabpanel" aria-label="personal-tab">
+
+                    <!-- Button to edit personal information only, not yet (?!) their financial focus or member they started-->
+                    <div class="mb-3" id="edit-personal-position">
+                        <button class="btn btn-outline-dark" id="edit-personalinfo">
+                            <i class="bi bi-pencil-square"></i> Edit
+                        </button>
+                    </div>
+
+                     <!-- all fields hardcoded for now -->
+                    <div class="row g-4" id="personal-info-fields">
+                        <div class="col-md-4">
+                            <label class="fw-bold d-block">FirstName:</label>
+                            <span class="text-muted" id="user-firstname">XXX XXX</span>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="fw-bold d-block">LastName:</label>
+                            <span class="text-muted" id="user-lastname">XXX XXX</span>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="fw-bold d-block">Email:</label>
+                            <span class="text-muted" id="user-email">XXX XXX</span>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="fw-bold d-block">PhoneNumber:</label>
+                            <span class="text-muted" id="user-phonenumber">XXX XXX</span>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="fw-bold d-block">Location:</label>
+                            <span class="text-muted" id="user-location">XXX XXX</span>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="fw-bold d-block">DOB:</label>
+                            <span class="text-muted" id="user-dob">XXX XXX</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Affiliated Bank Information Here -->
+                <div class="tab-pane fade" id="bank-info" role="tabpanel" aria-label="banks-tab">
+ 
+                    <!-- Button to add more Accounts -->
+                    <div class="mb-3" id="edit-bank-position">
+                        <button class="btn btn-outline-dark" id="edit-bankinfo">
+                            <i class="bi bi-plus-square"></i> Link Accounts
+                        </button>
+                    </div>
+ 
+                     <!-- all fields hardcoded for now until connect to API later -->
+                    <div class="list-group" id="users-bankaccounts-list">
+ 
+                        <div class="list-group-item bank-account-listed">
+                            <div class="bank-logo">
+                                <img src="/cfa-primary-keys/Images/bank-of-america-logo.jpg" alt="Bank of America logo">
+                            </div>
+                            <div>
+                                <h5 class="mb-0 fw-bold">Bank of America Checkings</h5>
+                                <small class="text-muted">Checkings xxxxx4321</small>
+                            </div>
+                        </div>
+ 
+                        <div class="list-group-item bank-account-listed">
+                            <div class="bank-logo">
+                                <img src="/cfa-primary-keys/Images/chase-logo.jpg" alt="Chase logo">
+                            </div>
+                            <div>
+                                <h5 class="mb-0 fw-bold">Chase Savings</h5>
+                                <small class="text-muted">Savings xxxxx4321</small>
+                            </div>
+                        </div>
+ 
+                        <div class="list-group-item bank-account-listed">
+                            <div class="bank-logo">
+                                <img src="/cfa-primary-keys/Images/Fidelity-Investments-logo.jpg" alt="Fidelity logo">
+                            </div>
+                            <div>
+                                <h5 class="mb-0 fw-bold">Fidelity Roth IRA</h5>
+                                <small class="text-muted">Retirement xxxxx4321</small>
+                            </div>
+                        </div>
+ 
+                    </div>
+ 
+                </div>
+
+            </div>
+        </div>
+
+        <!--- placeholder for footer here --->
+
+    </main>
+
+    <!--- Script to Bootstrap --->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="profile.js"></script>
+</body>
+</html>
