@@ -39,8 +39,8 @@ users_table = 'CREATE TABLE IF NOT EXISTS ' \
     '"user_id" INTEGER PRIMARY KEY AUTOINCREMENT,' \
     '"First Name" TEXT,' \
     '"Last Name" TEXT,' \
-    '"Phone number" TEXT,' \
-    '"Email" TEXT,' \
+    '"Phone number" TEXT UNIQUE,' \
+    '"Email" TEXT UNIQUE,' \
     '"Password" TEXT' \
     ')'
 sql.execute(users_table);
@@ -56,10 +56,5 @@ junction_table = 'CREATE TABLE IF NOT EXISTS ' \
 sql.execute(junction_table);
 
 connection.commit()
-
-sql.execute('SELECT Email FROM users')
-view = sql.fetchall()
-for row in view:
-    print(row)
 
 connection.close()
