@@ -1,0 +1,10 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "name": "banks",
+            "database": "${workspaceFolder:cfa-primary-keys}/SQL/pk_tables.db"
+        }
+    ]
+}

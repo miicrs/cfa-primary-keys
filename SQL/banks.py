@@ -45,13 +45,41 @@ users_table = 'CREATE TABLE IF NOT EXISTS ' \
     ')'
 sql.execute(users_table);
 
+# Creating goals table
+goals_table = 'CREATE TABLE IF NOT EXISTS ' \
+    'goals (' \
+    '"goals_id" INTEGER PRIMARY KEY AUTOINCREMENT,' \
+    '"Goals" TEXT' \
+    ')'
+sql.execute(goals_table);
+
+# Inserting goals into the table
+goals_info = '''INSERT INTO goals ("Goals") VALUES \
+    ("Saving money"), \
+    ("Investing"), \
+    ("Understanding credit"), \
+    ("Paying off loans / debts"), \
+    ("Retirement"), \
+    ("Asset protection"), \
+    ("Credit score"), \
+    ("Tracking your spending"), \
+    ("Building credit"), \
+    ("Investment portfolio"), \
+    ("Taxes"), \
+    ("Emergency funds"), \
+    ("Other") \
+'''
+sql.execute(goals_info);
+
 # Creating junction table
 junction_table = 'CREATE TABLE IF NOT EXISTS ' \
     'junction (' \
     '"user_id" INTEGER,' \
     '"bank_id" INTEGER,' \
+    '"goals_id" INTEGER,' \
     'FOREIGN KEY(user_id) REFERENCES users(user_id),' \
     'FOREIGN KEY(bank_id) REFERENCES banks(bank_id)' \
+    'FOREIGN KEY(goals_id) REFERENCES goals(goals_id)' \
     ')'
 sql.execute(junction_table);
 
