@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../../INFO340/patient-dash-project"
+		},
+		{
+			"path": "../../Lesson 04"
+		},
+		{
+			"path": "../../Lesson 05"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "cfa-primary-keys"
+	}
+}

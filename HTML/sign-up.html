@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Bao, Ezri, Carmen, Matyana">
+  <link rel="stylesheet" href="../css/sign-up.css">
+  <link rel="icon" type="image/png" href="../Images/cents.png">
+  <title>Making Cents Sign Up Page</title>
+</head>
+
+<body>
+    <!-- Making Cents Logo -->
+    <!-- Layout from Bootstrap Heroes example package -->
+     <div class="logo-container">
+        <img 
+            src="../Images/cents.png"
+            alt="Making cents logo containing black circle with cent symbol"
+            width="250"
+            height="250"
+        />
+     </div>
+
+    <!-- Greeting --> 
+    <div class="heading">
+        <h1>Welcome to Making Cents!</h1>
+        <p class="description">
+            We are glad that you are taking the first step to financial literacy. <br>
+            To get started, please put in your personal information below to sign up for an account:
+        </p>
+    </div>
+
+    <!-- Filling out personal information -->
+    <div class="signup-form">
+        <section>
+            <form id="card-form">
+                <label for="firstname-input" class="label">First name</label>
+                <input type="text" id="firstname-input" placeholder="First name" class="input" required>
+
+                <label for="lastname-input" class="label">Last name</label>
+                <input type="text" id="lastname-input" placeholder="Last name" class="input" required>
+
+                <label for="email-input" class="label">Email address</label>
+                <input type="email" id="email-input" placeholder="email@company.com" class="input" required>
+
+                <label for="phone-input" class="label">Phone number</label>
+                <input type="tel" id="phone-input" placeholder="000-000-0000" class="input" required>
+
+                <label for="createpass-input" class="label">Create password</label>
+                <input type="password" id="createpass-input" placeholder="At least 8 characters" class="input" required minlength="8" maxlength="20">
+
+                <label for="confirmpass-input" class="label">Confirm password</label>
+                <input type="password" id="confirmpass-input" placeholder="Confirm your password" class="input" required minlength="8" maxlength="20">
+
+                <p class="help" id="warning"></p>
+
+                <!-- Register button -->
+                <button class="register-btn" type="submit">
+                    <span>Register</span>
+                </button>
+            </form>
+        </section>
+    </div>
+
+    <div class="status" id="signup-status"></div>
+
+    <script src="../JavaScript/sign-up.js"></script>
+</body>
