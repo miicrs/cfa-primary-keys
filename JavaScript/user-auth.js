@@ -36,8 +36,10 @@ app.post('/signup', async (req, res) => {
             if (err) {
                 // UNIQUE constraint failure means the email is already taken
                 return res.status(400).json({ message: 'That email is already registered.' });
+                console.error(err.message); 
             }
             res.sendStatus(201);
+            console.log(`Rows updated: ${this.changes}`);
         }
     );
 });
