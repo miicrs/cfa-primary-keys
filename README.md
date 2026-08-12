@@ -1,4 +1,4 @@
-# cfa-finalproject-team2 <br>
+# Making Cents - Making Money Make Cents <br>
 Computing For All Summer 2026 Level 4 & 5 final project <br>
 
 Templates/elements created by (and courtesy of) <a href="https://getbootstrap.com/">Bootstrap</a> <br>
