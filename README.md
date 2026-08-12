@@ -18,3 +18,6 @@ A computer displaying some credit report info - Photo by PiggyBank on Unsplash <
 A person holding a phone - Photo by <a href="https://unsplash.com/@gibonskc?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Michal Biernat</a> on <a href="https://unsplash.com/photos/person-holding-black-and-white-pen-h0xEUQXzU38?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a> <br>
 A typewriter displaying the word "Contact" - Photo by <a href="https://unsplash.com/@markuswinkler?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Markus Winkler</a> on <a href="https://unsplash.com/photos/text-q3QPw37J6Xs?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a> <br>
 A Scrabble thing with the phrase "Contact Us" - Photo by <a href="https://unsplash.com/@milesb?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Miles Burke</a> on <a href="https://unsplash.com/photos/white-and-black-dice-on-green-textile-idhx-MOCDSk?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a> <br>
+
+Credit: <br>
+Profile Upload File <a href="https://developer.mozilla.org/en-US/docs/Web/API/FileReader"> , <a href="https://developer.mozilla.org/en-US/docs/Web/API/FileReader/readAsDataURL"> <br>

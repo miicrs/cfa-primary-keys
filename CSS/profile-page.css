@@ -40,7 +40,16 @@ main {
     justify-content: flex-end;
 }
 
-#personal-info-fields {
+/* starts off as hidden */
+#save-personalinfo-btn {
+    display: none;
+}
+
+#personal-info-warning {
+    display: none;
+}
+
+#personal-info-fieldsbox {
     row-gap: 3rem;
 }
 
@@ -56,6 +65,21 @@ main {
 #users-bankaccounts-list small {
     font-size: 1rem;
 }
+
+.edit-input:valid, .edit-input:focus:valid {
+    color: green;
+    border-color: green;
+}
+ 
+.edit-input:invalid, .edit-input:focus:invalid {
+    color: red;
+    border-color: red;
+}
+
+.is-danger {
+    color: #dc3545;
+}
+ 
 
 .bank-account-listed {
     display: flex;
@@ -75,4 +99,32 @@ main {
     width: 100%;
     height: 100%;
     object-fit: contain;
+}
+
+.photo-wrapper {
+    position: relative;
+    width: 180px;
+    margin: 0 auto;
+}
+ 
+.photo-overlay-btn {
+    display: none;
+    position: absolute;
+    inset: 0;
+    background-color: #00000080;
+    border-radius: 50%;
+    color: #fff;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+ 
+.photo-wrapper:hover .photo-overlay-btn {
+    display: flex;
+}
+
+/* starts off as hidden */
+#save-personalpic-btn {
+    display: none;
+    margin: auto;
 }
