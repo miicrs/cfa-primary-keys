@@ -1,10 +1,17 @@
 {
+<<<<<<< HEAD
+=======
     "liveServer.settings.port": 5501,
+>>>>>>> main
     "sqltools.connections": [
         {
             "previewLimit": 50,
             "driver": "SQLite",
+<<<<<<< HEAD
+            "name": "banks",
+=======
             "name": "bank",
+>>>>>>> main
             "database": "${workspaceFolder:cfa-primary-keys}/SQL/pk_tables.db"
         }
     ],
