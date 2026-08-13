@@ -68,6 +68,11 @@ form.addEventListener('submit', async function (event) {
     });
 
         if (response.ok) {
+            const data = await response.json();
+            
+            // save the userId so website knows which user picking goals
+            localStorage.setItem('userId', data.userId);
+
             // Prevent form submission if the sign up form is not filled out all the way
             window.location.href = 'bank-selection.html';
         } else {

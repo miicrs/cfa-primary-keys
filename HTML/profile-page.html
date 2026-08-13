@@ -3,28 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Profile - Making Cents</title>
+    <title>Profile Page - Making Cents</title>
 
     <!-- Bootstrap -->
     <html data-bs-theme="auto"></html>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 
-     <link rel="stylesheet" href="/cfa-primary-keys/CSS/profile-page.css">
+     <link rel="stylesheet" href="/CSS/profile-page.css">
 
 </head>
 
 <body>
-    <!-- placeholder comment for nav bar -->
+    <!--- Navigation Bar --->
+    <div class="container">
+         <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+             <a href="/HTML/index.html" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+                 <img src="/Images/cents.jpg" class="bi me-2" width="40" height="40">
+                 <svg class="bi me-2" width="40" height="32" aria-hidden="true">
+                    <use xlink:href="#bootstrap"></use>
+                 </svg> 
+                 <span class="fs-4 d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">Making Cents</span>
+             </a>
+             
+             
+             <ul class="nav nav-pills">
+                 <li class="nav-item">
+                    <a href="/HTML/index.html" class="nav-link" aria-current="page">Home</a>
+                 </li>
+                 <li class="nav-item">
+                    <a href="calc.html" class="nav-link">Budget Builder</a>
+                 </li>
+                 <li class="nav-item">
+                    <a href="/HTML/resources.html" class="nav-link">Resources</a>
+                 </li> 
+
+                 <li class="nav-item">
+                    <a href="/HTML/profile-page.html" class="nav-link active">Profile</a>
+                 </li>
+
+                 <li class="nav-item">
+                    <a href="/HTML/contact.html" class="nav-link">Contact Us</a>
+                 </li> 
+         </header>
+    </div>
 
     <main class="container my-5 pt-2">
 
+        <!-- Public Information -->
         <div class="row mb-5 align-items-center" id="users-summary">
 
             <!-- User's Profile Image -->
             <div class="col-md-3 mb-3 mb-0 text-center">
-                <div class="card border-0" id="users-image">
-                    <img src="/cfa-primary-keys/Images/default-profile-image.jpg" class="card-img-top rounded-circle mx-auto" alt="Profile picture" style="width: 180px; height: 180px; object-fit: cover;">
+                <div class="card border-0">
+                    <div class="photo-wrapper">
+                        <img src="/Images/default-profile-image.jpg" class="card-img-top rounded-circle mx-auto" id="user-image" alt="Profile picture" style="width: 180px; height: 180px; object-fit: cover;">
+
+                        <!-- hidden image upload button -->
+                        <label for="profile-pic-upload" class="photo-overlay-btn">
+                            <i class="bi bi-camera"></i>
+                        </label>
+
+                        <input class="form-control" type="file" id="profile-pic-upload" accept="image/*" hidden>
+                    </div>
+
+                    <!-- save button, shown when upload image -->
+                    <button class="btn btn-outline-dark  btn-sm" id="save-personalpic-btn" type="button">
+                            <i class="bi bi-save"></i> Save Photo
+                        </button>
+
                     <!-- User's Name -->
                     <h3 class="card-title mb-0" id="users-name">FirstName LastName</h3>
                 </div>
@@ -35,20 +82,21 @@
             <div class="col-md-8" id="users-overview-information">
                 <div class="card bg-opacity-25 border-0 shadow">
                     <div class="card-body" id="users-public-info">
-                        <span class="fw-semibold">user@email.com</span>
-                        <span class="text-dark">Member since July 2xxx</span>
+                        <span class="fw-semibold" id="users-email">user@email.com</span>
+                        <span class="text-dark" id="users-join-date">Member since July 2xxx</span>
                     </div>
                 </div>
  
                 <div class="card bg-opacity-25 border-0 shadow" id="users-financial-focus">
                     <div class="card-body">
                         <strong>My Financial Focus:</strong>
-                        <span class="text-dark">[user's financial focus all on here]</span>
+                        <span class="text-dark" id="users-financial-focus-selected">[user's financial focus all on here]</span>
                     </div>
                 </div>
             </div>
         </div>
 
+        <!-- Personal Information -->
         <div class="mt-4" id="users-information-tabs">
             <!-- Toggle between choosing Personal Information or Affiliated Bank Information Buttons -->
             <ul class="nav nav-pills mb-3" id="information-buttons" role="tablist">
@@ -72,36 +120,35 @@
 
                     <!-- Button to edit personal information only, not yet (?!) their financial focus or member they started-->
                     <div class="mb-3" id="edit-personal-position">
-                        <button class="btn btn-outline-dark" id="edit-personalinfo">
+                        <button class="btn btn-outline-dark" id="edit-personalinfo-btn" type="button">
                             <i class="bi bi-pencil-square"></i> Edit
+                        </button>
+                        
+                        <button class="btn btn-outline-dark" id="save-personalinfo-btn" type="button">
+                            <i class="bi bi-save"></i> Save
                         </button>
                     </div>
 
+                    <p id="personal-info-warning"></p>
+
                      <!-- all fields hardcoded for now -->
-                    <div class="row g-4" id="personal-info-fields">
-                        <div class="col-md-4">
+                    <div class="row g-4" id="personal-info-fieldsbox">
+                        <!--  best practice until API connect -->
+                        <div class="profile-fields-infos col-md-6">
                             <label class="fw-bold d-block">FirstName:</label>
-                            <span class="text-muted" id="user-firstname">XXX XXX</span>
+                            <span class="field-value text-muted">XXX XXX</span>
                         </div>
-                        <div class="col-md-4">
+                        <div class="profile-fields-infos col-md-6">
                             <label class="fw-bold d-block">LastName:</label>
-                            <span class="text-muted" id="user-lastname">XXX XXX</span>
+                            <span class="field-value text-muted">XXX XXX</span>
                         </div>
-                        <div class="col-md-4">
+                        <div class="profile-fields-infos col-md-6">
                             <label class="fw-bold d-block">Email:</label>
-                            <span class="text-muted" id="user-email">XXX XXX</span>
+                            <span class="field-value text-muted">XXX XXX</span>
                         </div>
-                        <div class="col-md-4">
+                        <div class="profile-fields-infos col-md-6">
                             <label class="fw-bold d-block">PhoneNumber:</label>
-                            <span class="text-muted" id="user-phonenumber">XXX XXX</span>
-                        </div>
-                        <div class="col-md-4">
-                            <label class="fw-bold d-block">Location:</label>
-                            <span class="text-muted" id="user-location">XXX XXX</span>
-                        </div>
-                        <div class="col-md-4">
-                            <label class="fw-bold d-block">DOB:</label>
-                            <span class="text-muted" id="user-dob">XXX XXX</span>
+                            <span class="field-value text-muted">XXX XXX</span>
                         </div>
                     </div>
                 </div>
@@ -119,9 +166,9 @@
                      <!-- all fields hardcoded for now until connect to API later -->
                     <div class="list-group" id="users-bankaccounts-list">
  
-                        <div class="list-group-item bank-account-listed">
+                        <div class="bank-account-listed list-group-item">
                             <div class="bank-logo">
-                                <img src="/cfa-primary-keys/Images/bank-of-america-logo.jpg" alt="Bank of America logo">
+                                <img src="/Images/bank-of-america-logo.jpg" alt="Bank of America logo">
                             </div>
                             <div>
                                 <h5 class="mb-0 fw-bold">Bank of America Checkings</h5>
@@ -129,9 +176,9 @@
                             </div>
                         </div>
  
-                        <div class="list-group-item bank-account-listed">
+                        <div class="bank-account-listed list-group-item">
                             <div class="bank-logo">
-                                <img src="/cfa-primary-keys/Images/chase-logo.jpg" alt="Chase logo">
+                                <img src="/Images/chase-logo.jpg" alt="Chase logo">
                             </div>
                             <div>
                                 <h5 class="mb-0 fw-bold">Chase Savings</h5>
@@ -139,9 +186,9 @@
                             </div>
                         </div>
  
-                        <div class="list-group-item bank-account-listed">
+                        <div class="bank-account-listed list-group-item">
                             <div class="bank-logo">
-                                <img src="/cfa-primary-keys/Images/Fidelity-Investments-logo.jpg" alt="Fidelity logo">
+                                <img src="/Images/Fidelity-Investments-logo.jpg" alt="Fidelity logo">
                             </div>
                             <div>
                                 <h5 class="mb-0 fw-bold">Fidelity Roth IRA</h5>
@@ -156,12 +203,43 @@
             </div>
         </div>
 
-        <!--- placeholder for footer here --->
-
     </main>
+
+    <!--- The Footers that displays copyright information as well as some external links --->
+    <div class="container"> 
+        <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top">
+             <div class="col mb-3">
+                 <img src="/Images/cents.jpg" class="bi me-2" width="40" height="40" alt="Making Cents Logo">
+                 <p class="text-body-secondary">© Making Cents</p>
+             </div>
+             
+            <!--- Links --->
+            <div class="col mb-3">
+                <h5>Section</h5>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2">
+                        <a href="/HTML/index.html" class="nav-link p-0 text-body-secondary">Home</a>
+                    </li> 
+                    <li class="nav-item mb-2">
+                    <a href="calc.html" class="nav-link p-0 text-body-secondary">Budget Builder</a>
+                     </li>
+                    <li class="nav-item mb-2">
+                        <a href="/HTML/profile-page.html" class="nav-link p-0 text-body-secondary">Profile</a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a href="/HTML/resources.html" class="nav-link p-0 text-body-secondary">Resources</a>
+                    </li> 
+                    <li class="nav-item mb-2">
+                        <a href="/HTML/contact.html" class="nav-link p-0 text-body-secondary">Contact Us</a>
+                    </li> 
+                </ul> 
+            </div>
+        </footer>
+    </div>
 
     <!--- Script to Bootstrap --->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="profile.js"></script>
+    <script src="/JavaScript/profile-personalinfo.js"></script>
+     <script src="/JavaScript/profile-image.js"></script>
 </body>
 </html>
