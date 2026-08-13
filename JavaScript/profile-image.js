@@ -1,16 +1,8 @@
 // query selectors
-const userImage = document.querySelector('#user-image');
 const savePhotoBtn = document.querySelector('#save-personalpic-btn');
 const picUpload = document.querySelector('#profile-pic-upload');
 
-// show previously saved photo
-function showPhoto() {
-    let savedPhoto = localStorage.getItem('profileImage');
-
-    if (savedPhoto) {
-        userImage.src = savedPhoto;
-    }
-}
+// note: deleted showPhoto() function as it was connected to localStorage
  
 // does file selection by previous and show the save button once selected
 function previewPhoto() {
@@ -28,14 +20,32 @@ function previewPhoto() {
     reader.readAsDataURL(file);
 }
  
-// save the currently showing photo to storage then hide the button again
-function savePhoto() {
-    localStorage.setItem('profileImage', userImage.src);
+// save the user's photo to database then hide the button again
+async function savePhoto() {
+    if (!token || !userId) return;
 
-    savePhotoBtn.style.display = 'none';
+    try {
+        const res = await fetch(`${API_URL}/users/${userId}/photo`, {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify({
+                profileImage: userImage.src
+            })
+        });
+
+        if (res.ok) {
+            // where hiding save button after update goes well part
+            savePhotoBtn.style.display = 'none';
+        } else {
+            console.error("Error where cannot save profile photo.");
+        }
+    } catch (err) {
+        console.error("Could not reach the server. Please try again.");
+    }
 }
- 
-showPhoto();
  
 if (picUpload) {
     picUpload.addEventListener('change', previewPhoto);

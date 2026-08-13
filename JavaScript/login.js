@@ -44,6 +44,7 @@ async function login(email, password) {
         if (res.ok) {
             const data = await res.json();
             localStorage.setItem('token', data.token);
+            localStorage.setItem('userId', data.userId);
             // setStatus('login-status', 'Logged in.', 'success');
 
             const tokenBox = document.getElementById('token-box');
