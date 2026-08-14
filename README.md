@@ -21,7 +21,9 @@ __Our mission statement:__ <br>
 People close to us are struggling with their growing money not because they are smart, but because no one sat them down and explained the basics. We designed this financial literacy website to help them feel approachable and understandable in regards to financial literacy instead of feeling intimidated.
 
 ## Demo
-Here is a link to the demo for our website, [Making Cents]!
+[Making Cents demo video](https://drive.google.com/file/d/1y-NxWjg6f3v7I4_ZdGDsJSmYTbNumffO/view?usp=sharing)
+[Making Cents website](https://makingcents.netlify.app/)
+
 
 ## Credits
 __Making Cents Logo:__ <br>
