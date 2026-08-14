@@ -8,21 +8,22 @@
 
 ## Overview
 __Making Cents__ is a financial literacy website that helps users understand key concepts they need to know through breaking down money management into simple lessons anyone can easily understand and follow. <br>
-
+<br>
 __Why is this important?__
 - Empowers individuals to make informed decisions about saving, spending, and investing
 - Helps people avoid falling into predatory scams 
 - Be better planned for major life events
 - Building better habits for financial independence and security
 - Giving people confidence to manage their own finances
-- Set realistic goals to achieve financial freedom 
+- Set realistic goals to achieve financial freedom
+<br>
 
 __Our mission statement:__ <br>
 People close to us are struggling with their growing money not because they are smart, but because no one sat them down and explained the basics. We designed this financial literacy website to help them feel approachable and understandable in regards to financial literacy instead of feeling intimidated.
 
-## Demo
-[Making Cents demo video](https://drive.google.com/file/d/1y-NxWjg6f3v7I4_ZdGDsJSmYTbNumffO/view?usp=sharing)
-[Making Cents website](https://makingcents.netlify.app/)
+## Demo 
+Here are the links to our demo video for Making Cents and the deployed website! <br>
+[Making Cents website](https://makingcents.netlify.app/) | [Making Cents demo video](https://drive.google.com/file/d/1y-NxWjg6f3v7I4_ZdGDsJSmYTbNumffO/view?usp=sharing) 
 
 
 ## Credits
@@ -43,7 +44,7 @@ __Images:__ <br>
 - Search bar icons - [Microphone](https://www.flaticon.com/free-icon/microphone_709682?term=microphone&page=1&position=5&origin=search&related_id=709682) & [Magnifying glass](https://www.flaticon.com/free-icon/loupe_709592?term=search&page=1&position=2&origin=style&related_id=709592)
 - [Bank logos](https://www.logo.dev/)
 
-__Sources used:__ <br>
+__Sources:__ <br>
 - Profile Upload File - [I](https://developer.mozilla.org/en-US/docs/Web/API/FileReader) [II](https://developer.mozilla.org/en-US/docs/Web/API/FileReader/readAsDataURL) <br>
 - Templates/elements created by (and courtesy of) <a href="https://getbootstrap.com/">Bootstrap</a> <br>
 
